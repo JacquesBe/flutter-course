@@ -21,13 +21,11 @@ class _DiceRollerState extends State<DiceRoller> {
     'assets/dice-6.png',
   ];
 
-  final random = Random();
-
   int randomNumber = 0;
 
   void rollDice() {
     setState(() {
-      randomNumber = random.nextInt(6);
+      randomNumber = Random().nextInt(6);
     });
   }
 
