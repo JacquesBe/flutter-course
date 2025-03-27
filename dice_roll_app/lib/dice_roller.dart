@@ -15,7 +15,7 @@ class _DiceRollerState extends State<DiceRoller> {
   String diceImage = 'assets/dice-1.png';
   void rollDice() {
     setState(() {
-      final randomInt = Random().nextInt(6);
+      final randomInt = Random().nextInt(6) + 1;
       diceImage = 'assets/dice-$randomInt.png';
     });
   }
