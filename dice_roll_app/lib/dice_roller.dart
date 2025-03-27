@@ -12,20 +12,11 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  final List<String> dice = [
-    'assets/dice-1.png',
-    'assets/dice-2.png',
-    'assets/dice-3.png',
-    'assets/dice-4.png',
-    'assets/dice-4.png',
-    'assets/dice-6.png',
-  ];
-
-  int randomNumber = 0;
-
+  String diceImage = 'assets/dice-1.png';
   void rollDice() {
     setState(() {
-      randomNumber = Random().nextInt(6);
+      final randomInt = Random().nextInt(6);
+      diceImage = 'assets/dice-$randomInt.png';
     });
   }
 
@@ -35,7 +26,7 @@ class _DiceRollerState extends State<DiceRoller> {
       mainAxisAlignment: MainAxisAlignment.center,
       spacing: 20,
       children: [
-        Image.asset(dice[randomNumber], width: 200),
+        Image.asset(diceImage, width: 200),
         ElevatedButton(
           onPressed: rollDice,
           style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
